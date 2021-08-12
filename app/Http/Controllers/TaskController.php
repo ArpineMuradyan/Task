@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Models\Tasks;
 use Auth;
+use Validator;
 
 class TaskController extends Controller
 {
@@ -37,25 +38,6 @@ class TaskController extends Controller
             'tasks' => $tasks
         ], Response::HTTP_OK);
       }
-
-
-      //
-      // $request->validate([
-      //   'user' => ['required'],
-      //   'description' => ['required']
-      // ]);
-      //
-      // Tasks::create([
-      //   'user_id' => $request->user,
-      //   'description' => $request->description,
-      //   'status' => 0
-      // ]);
-      // $user = Auth::user();
-      // $tasks = Tasks::select('id', 'user_id', 'description', 'status')
-      //   ->where("user_id", $user->id)->get();
-      // return response()->json([
-      //     'tasks' => $tasks
-      // ], Response::HTTP_OK);
     }
 
     public function getTask(){
